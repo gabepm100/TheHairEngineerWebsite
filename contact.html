@@ -33,6 +33,7 @@
         <link rel="stylesheet" href="assets/css/responsive.css" />
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js">
     </head>
     <body data-spy="scroll" data-target=".navbar-collapse">
         <!--[if lt IE 8]>
@@ -136,9 +137,28 @@
                                                 </div>
 
                                                 <div class="">
-                                                    <input type="submit" value="submit" class="btn">
+                                                    <input type="submit" value="submit" class="btn" onclick="sendEmail()">
                                                 </div>
                                                 <!--</div>--> 
+                                                <script type="text/javascript">
+                                                    function sendEmail() {
+                                                        const inputName=document.getElementById("label-fname")
+                                                        const inputEmail=document.getElementById("label-femail")
+                                                        const inputMessage=document.getElementById("label-fmessage")
+                                                        Email.send({
+                                                            Host: "smtp.gmail.com",
+                                                            Username: "h7540691@gmail.com",
+                                                            Password: "waZcuz-0pocni-syxraj",
+                                                            To: 'receiver@email_address.com',
+                                                            From: "h7540691@gmail.com",
+                                                            Subject: "New Appointment Request!",
+                                                            Body: inputName.value+" would like an apointement. Here is the message that they left: "+inputEmail.value+" if you would like to email them back this is their email: "+inputEmail.Value
+                                                        })
+                                                            .then(function (message) {
+                                                                alert("mail sent successfully")
+                                                            });
+                                                    }
+                                                </script>
                                             </form>
                                         </div>
                                     </div>
