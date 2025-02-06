@@ -900,6 +900,7 @@ service section css
 }
 .single_mixi_portfolio:hover .single_work_overlay{
     opacity: 1;
+    place-items: center;
 }
 
 
