@@ -893,7 +893,7 @@ service section css
     padding-top: 15%;
     opacity: 0;
     transition: all 0.6s;
-    justify-tems: center;
+    justify-items: center;
     align-items: center;
 }
 .single_work_overlay.single_work_overlay2{
