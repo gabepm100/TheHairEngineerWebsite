@@ -889,7 +889,7 @@ service section css
     height: 80%;
     left:10%;
     top:10%;
-    position:absolute;
+    position:relative;
     padding-top: 15%;
     opacity: 0;
     transition: all 0.6s;
@@ -901,6 +901,9 @@ service section css
 .single_mixi_portfolio:hover .single_work_overlay{
     opacity: 1;
     place-items: center;
+}
+#single_work_container {
+    position: relative;
 }
 
 
