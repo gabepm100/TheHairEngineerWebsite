@@ -893,17 +893,17 @@ service section css
     padding-top: 15%;
     opacity: 0;
     transition: all 0.6s;
-    place-items: center;
+    justify-tems: center;
+    align-items: center;
 }
 .single_work_overlay.single_work_overlay2{
     padding-top: 40%;
 }
 .single_mixi_portfolio:hover .single_work_overlay{
     opacity: 1;
-    place-items: center;
 }
 #single_work_container {
-    position: relative;
+    display: inline-block;
 }
 
 
