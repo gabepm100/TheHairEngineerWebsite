@@ -993,6 +993,7 @@ service section css
 .single_service{
     min-height: 555px;
     position: relative;
+    height: 100%;
 }
 .single_service_small{
     min-height: 300px;
