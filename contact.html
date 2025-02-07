@@ -33,7 +33,7 @@
         <link rel="stylesheet" href="assets/css/responsive.css" />
 
         <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-        <script src="https://smtpjs.com/v3/smtp.js">
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
     </head>
     <body data-spy="scroll" data-target=".navbar-collapse">
         <!--[if lt IE 8]>
@@ -47,7 +47,7 @@
                         <div class="nave_menu">
                             <nav class="navbar navbar-default" id="navmenu">
                                 <div class="container-fluid">
-                                    <!-- Brand and toggle get grouped for better mobile display -->
+                    
                                     <div class="navbar-header">
                                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                                             <span class="sr-only">Toggle navigation</span>
@@ -59,10 +59,6 @@
                                             <h2>The Hair Engineer</h2>
                                         </a>
                                     </div>
-
-
-                                    <!-- Collect the nav links, forms, and other content for toggling -->
-
 
 
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -118,26 +114,31 @@
 
                                     <div class="col-sm-6 col-xs-12">
                                         <div class="single_contant_left">
-                                            <form action="#" id="formid" class="even-spacing">
+                                            <form action="https://api.web3forms.com/submit" method="POST" id="formid" class="even-spacing">
                                                 <!--<div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">-->
-
                                                 <div>
-                                                    <input class="inputfieldsmall" id="label-fname" placeholder="Name"/>
+                                                    
+                                                    <input type="hidden" name="access_key" value="e080f277-a573-4af8-bf83-9e00f36231f3">
+                                                
+                                                </div>
+                                                    
+                                                <div>
+                                                    <input class="inputfieldsmall" type="text" name="name" id="label-fname" placeholder="Name" required>
 
                                                 </div>
 
                                                 <div>
                                                     <br>
-                                                    <input class="inputfieldsmall" id="label-femail" placeholder="Email"/>
+                                                    <input class="inputfieldsmall" type="email" name="email" id="label-femail" placeholder="Email" required>
                                                 </div>
 
                                                 <div>
                                                     <br>
-                                                    <textarea id="label-fmessage" class ="inputfieldlarge" placeholder="Message" name="" rows="4" cols="50"></textarea>
+                                                    <textarea id="label-fmessage" name ="message"class ="inputfieldlarge" placeholder="Message" name="" rows="4" cols="50" required></textarea>
                                                 </div>
 
                                                 <div class="">
-                                                    <input type="submit" value="submit" class="btn" onclick="sendEmail()">
+                                                    <input type="submit" value="submit" class="btn">
                                                 </div>
                                                 <!--</div>--> 
                                                 <script type="text/javascript">
@@ -145,14 +146,15 @@
                                                         const inputName=document.getElementById("label-fname")
                                                         const inputEmail=document.getElementById("label-femail")
                                                         const inputMessage=document.getElementById("label-fmessage")
+                                                        console.log(inputName.value+" would like an apointement. Here is the message that they left: \""+inputMessage.value+"\" if you would like to email them back this is their email: "+inputEmail.value)
                                                         Email.send({
                                                             Host: "smtp.gmail.com",
                                                             Username: "h7540691@gmail.com",
                                                             Password: "waZcuz-0pocni-syxraj",
-                                                            To: 'receiver@email_address.com',
+                                                            To: "gabepm100@gmail.com",
                                                             From: "h7540691@gmail.com",
                                                             Subject: "New Appointment Request!",
-                                                            Body: inputName.value+" would like an apointement. Here is the message that they left: "+inputEmail.value+" if you would like to email them back this is their email: "+inputEmail.Value
+                                                            Body: inputName.value+" would like an apointement. Here is the message that they left: \""+inputMessage.value+"\" if you would like to email them back this is their email: "+inputEmail.value
                                                         })
                                                             .then(function (message) {
                                                                 alert("mail sent successfully")

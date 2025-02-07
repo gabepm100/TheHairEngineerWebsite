@@ -536,8 +536,8 @@ input::-ms-input-placeholder {
     color: #333;
 }
 .navbar-brand>h2 {    
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    align-items: center;
+    display: inline-flex;
 }
 .navbar-brand>h3 {    
     -ms-transform: translateY(-50%);
